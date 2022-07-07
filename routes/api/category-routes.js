@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
   try {
     // find all categories
     // be sure to include its associated Products
-    console.log('IN THE / ROUTE')
     const categories = await Category.findAll({
       include: [{ model: Product }]
     });
