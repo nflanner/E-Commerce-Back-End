@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!tags) {
-      res.status(404).json({ message: 'No category found with this id!'})
+      res.status(404).json({ message: 'No tags found with this id!'})
     }
     
     res.status(200).json(tags);
@@ -53,7 +53,7 @@ router.put('/:id', async (req, res) => {
       }
     });
     if (!tagData) {
-      res.status(404).json({ message: 'No user with this id!' });
+      res.status(404).json({ message: 'No tags with this id!' });
       return;
     }
     res.status(200).json(tagData);
@@ -72,7 +72,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!tagData) {
-      res.status(404).json({ message: 'No category found with this id!' });
+      res.status(404).json({ message: 'No tags found with this id!' });
       return;
     }
 
