@@ -112,20 +112,6 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
-  // try {
-    // if there's product tags, we need to create pairings to bulk delete in the ProductTag model
-    // const productData = await Product.findByPk(req.params.id, {
-    //   include: [{ model: Category }, {model: Tag, through: ProductTag, as: 'product_tags'}]
-    // });
-    // if (productData) {
-    //   const productTagIdArr = productData.product_tags.map((productTagObj) => {
-    //     return {
-    //       product_id: productTagObj.product_tag.product_id,
-    //       tag_id: productTagObj.product_tag.tag_id
-    //     };
-    //   });
-    //   return ProductTag.bulkDelete(productTagIdArr);
-    // }
   try {
     const productData = await Product.destroy({
       where: {
